@@ -15,3 +15,6 @@ build:
 
 production:
 	@yarn start
+
+lint:
+	@yarn lint
