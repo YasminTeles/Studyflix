@@ -10,6 +10,18 @@
     "coverage": "jest --coverage",
     "lint": "eslint ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "cross-env CI=true yarn test --bail --findRelatedTests",
+      "git add"
+    ]
+  },
   "dependencies": {
     "next": "10.0.3",
     "prop-types": "^15.7.2",
